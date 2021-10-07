@@ -16,7 +16,7 @@ reset.addEventListener("click", () => {
     for (var rw = 0; rw <= width; rw += scale) {
         for (var cl = 0; cl <= height; cl += scale) {            
             c.fillStyle = "black";
-            c.fillRect(rw, cl, (scale - 1), (scale - 1));
+            c.fillRect(rw+1, cl+1, (scale - 2), (scale - 2));
         }
     }
 });
