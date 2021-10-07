@@ -10,7 +10,16 @@ const playButton = document.querySelector('#play');
 const stopButton = document.querySelector('#stop');
 const scaleUp = document.querySelector('#scaleUp');
 const scaleDown = document.querySelector('#scaleDown');
+const reset = document.querySelector('#reset');
 // Add Event Listeners
+reset.addEventListener("click", () => {
+    for (var rw = 0; rw <= width; rw += scale) {
+        for (var cl = 0; cl <= height; cl += scale) {            
+            c.fillStyle = "black";
+            c.fillRect(rw, cl, (scale - 1), (scale - 1));
+        }
+    }
+});
 playButton.addEventListener("click", () => {
     evolve = true;
     showEvolution()
@@ -31,7 +40,7 @@ scaleUp.addEventListener("click", () => {
             }
             col += 1;
         }
-    row += 1;
+        row += 1;
     }
     // redraw board with new scale
     scale += 10;
@@ -40,7 +49,7 @@ scaleUp.addEventListener("click", () => {
     console.log(`stateStash: ${stateStash}`);
     stateStash.forEach(change => {
         c.fillStyle = "white";
-        row = change[0]*scale; col = change[1]*scale;
+        row = change[0] * scale; col = change[1] * scale;
         c.fillRect(row + 1, col + 1, (scale - 2), (scale - 2));
     });
 
@@ -59,7 +68,7 @@ scaleDown.addEventListener("click", () => {
             }
             col += 1;
         }
-    row += 1;
+        row += 1;
     }
     // redraw board with new scale
     scale -= 10;
@@ -68,7 +77,7 @@ scaleDown.addEventListener("click", () => {
     console.log(`stateStash: ${stateStash}`);
     stateStash.forEach(change => {
         c.fillStyle = "white";
-        row = change[0]*scale; col = change[1]*scale;
+        row = change[0] * scale; col = change[1] * scale;
         c.fillRect(row + 1, col + 1, (scale - 2), (scale - 2));
     });
 });
