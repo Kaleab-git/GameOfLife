@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game of Life</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .canvas-container {
+      position: relative;
+    }
+
+    #canvas {
+      position: absolute;
+    }
+
+    .btn {
+      background-color: #99ca9b;
+      position: absolute;
+      border: none; 
+      color: black;   
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    #play {
+      left: 30%;
+      top: 50%;
+    }
+    #stop {
+      left: 38%;
+      top: 50%;
+    }
+    #scaleUp {
+      left: 46%;
+      top: 50%;
+    }
+    #scaleDown {
+      left: 51%;
+      top: 50%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="canvas-container">
+    <canvas class="btn" id="canvas"></canvas>
+    <button class="btn" id='play'>Start Evolution</button>
+    <button class="btn" id='stop'>Stop Evolution</button>
+    <button class="btn" id='scaleUp'>Zoom In</button>
+    <button class="btn" id='scaleDown'>Zoom Out</button>
+  </div>
+  <script src="canvas.js"></script>
+</body>
+
+</html>
